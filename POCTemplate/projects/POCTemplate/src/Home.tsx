@@ -29,7 +29,7 @@ const Home: React.FC<HomeProps> = () => {
             className="btn btn-primary"
             onClick={() => setOpenWalletModal(true)}
           >
-            Connect Wallet
+            Please Connect Wallet!
           </button>
 
           {activeAddress && (
