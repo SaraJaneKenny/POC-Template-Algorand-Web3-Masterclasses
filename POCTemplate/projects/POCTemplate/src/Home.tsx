@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import ConnectWallet from './components/ConnectWallet'
 import Transact from './components/Transact'
 import NFTmint from './components/NFTmint'
+import Tokenmint from './components/Tokenmint'
 
 interface HomeProps {}
 
@@ -11,6 +12,7 @@ const Home: React.FC<HomeProps> = () => {
   const [openWalletModal, setOpenWalletModal] = useState(false)
   const [openPaymentModal, setOpenPaymentModal] = useState(false)
   const [openMintModal, setOpenMintModal] = useState(false)
+  const [openTokenModal, setOpenTokenModal] = useState(false)
 
   const { activeAddress } = useWallet()
 
@@ -47,6 +49,13 @@ const Home: React.FC<HomeProps> = () => {
               >
                 Mint MasterPass NFT
               </button>
+
+              <button
+                className="btn btn-info"
+                onClick={() => setOpenTokenModal(true)}
+              >
+                Create Token (ASA)
+              </button>
             </>
           )}
         </div>
@@ -63,6 +72,10 @@ const Home: React.FC<HomeProps> = () => {
         <NFTmint
           openModal={openMintModal}
           setModalState={setOpenMintModal}
+        />
+        <Tokenmint
+          openModal={openTokenModal}
+          setModalState={setOpenTokenModal}
         />
       </div>
     </div>
